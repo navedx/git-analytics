@@ -4,17 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently -k -n web,server \"pnpm --filter web dev\" \"pnpm --filter server dev\"",
     "build": "pnpm --filter server build && pnpm --filter web build",
     "dev:web": "pnpm --filter web dev",
-    "dev:server": "pnpm --filter server dev"
+    "dev:server": "pnpm --filter server dev",
+    "lint": "pnpm --recursive --parallel --stream lint",
+    "lint:fix": "pnpm --recursive --parallel --stream --if-present lint:fix",
+    "typecheck": "pnpm --recursive --parallel --stream typecheck"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.20.0",
   "devDependencies": {
-    "concurrently": "^10.0.6"
+    "@eslint/js": "^10.0.1",
+    "concurrently": "^10.0.6",
+    "eslint": "^9.39.5",
+    "globals": "^17.13.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.1"
   }
 }
