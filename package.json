@@ -13,7 +13,8 @@
     "dev:server": "pnpm --filter server dev",
     "lint": "pnpm --recursive --parallel --stream lint",
     "lint:fix": "pnpm --recursive --parallel --stream --if-present lint:fix",
-    "typecheck": "pnpm --recursive --parallel --stream typecheck"
+    "typecheck": "pnpm --recursive --parallel --stream typecheck",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
