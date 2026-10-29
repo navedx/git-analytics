@@ -1,0 +1,20 @@
+{
+  "name": "git-analytics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently -k -n web,server \"pnpm --filter web dev\" \"pnpm --filter server dev\"",
+    "build": "pnpm --filter server build && pnpm --filter web build",
+    "dev:web": "pnpm --filter web dev",
+    "dev:server": "pnpm --filter server dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.20.0",
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
